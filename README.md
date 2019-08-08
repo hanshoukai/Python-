@@ -1,3 +1,9 @@
+# Python基础练习脚本
+添加re正则的练习  
+添加json和demjson的练习  
+添加hashlib库md5和sha256加密的练习  
+添加base64的练习  
+
 # Python实用小脚本
 添加读取文件的脚本  
 添加批量生成手机号及用户名密码的脚本  

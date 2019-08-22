@@ -1,7 +1,7 @@
 # /usr/bin/env python
 # -*- coding: utf-8 -*-
 # author = 'Han Kai'
-"""
+
 #递归函数
 #函数的内部也可以调用外部的函数
 #函数的内部也可以调用自己，这就是深度循环
@@ -55,7 +55,7 @@ a = [feibo(i) for i in range(1,n+1)]
 print(a)
 # print(feibo(3))
 
-"""
+
 #闭包:外部找到内嵌函数，完成内嵌函数的调用而已
 def outer():
     def inner():
@@ -73,36 +73,57 @@ a = outer(20)
 print(a(200))
 
 
-#装饰器
-def fun():
+#装饰器：用来在原有的函数上增添新的代码需求
+def fun1():
     print('i am hanshoukai')
-
-print('*'.center(50,'-'))
 
 def outer(func):
     def inner():
-        fun()
+        func()
         print('i come from china!')
     return inner
-a = outer(fun)
-print(a())
+a = outer(fun1)
+a()
 
+#======================================
+def outer(func):
+    def inner():
+        func()
+        print('i come from china!')
+    return inner
 
+@outer  #a = outer(fun1)
+def fu():
+    print('i am hanshoukai')
+fu()
 
+@outer
+def ff():
+    print("this is fuck!")
+ff()
+#======================================
+# 装饰器传参
+def outerr(func):
+    def innerr(name):
+        func(name)
+        print('innerr is %s'%name)
+    return innerr
 
+@outerr
+def fun(name):
+    print('this is %s'%name)
+fun('what')
 
-
-
-
-
-
-
-
-
-
-
-
-
+#更加通用的传参装饰器
+def out(func):
+    def in_in(*args,**kwargs):
+        c = func(*args,**kwargs)
+        print(c)
+    return in_in
+@out
+def func11(a,b=2):
+    return a*b
+func11(3,4)
 
 
 print('*'.center(50,'-'))

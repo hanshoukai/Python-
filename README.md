@@ -10,6 +10,7 @@
 添加迭代器练习  
 添加生成器练习  
 添加zip函数和enumerate函数练习  
+添加time和os模块的操作练习  
 添加re正则的练习  
 添加json和demjson的练习  
 添加hashlib库md5和sha256加密的练习  

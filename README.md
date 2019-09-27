@@ -15,6 +15,7 @@
 添加json和demjson的练习  
 添加hashlib库md5和sha256加密的练习  
 添加base64的练习  
+添加python面向对象  
 
 
 # Python实用小脚本
